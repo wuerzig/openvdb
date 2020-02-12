@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////
 //
-// Copyright (c) DreamWorks Animation LLC
+// Copyright (c) 2012-2018 DreamWorks Animation LLC
 //
 // All rights reserved. This software is distributed under the
 // Mozilla Public License 2.0 ( http://www.mozilla.org/MPL/2.0/ )
@@ -41,12 +41,12 @@ void
 exportVec3Grid()
 {
     pyGrid::exportGrid<Vec3SGrid>();
-#ifdef PY_OPENVDB_WRAP_ALL_GRID_TYPES
+//#ifdef PY_OPENVDB_WRAP_ALL_GRID_TYPES
     pyGrid::exportGrid<Vec3IGrid>();
     pyGrid::exportGrid<Vec3DGrid>();
-#endif
+//#endif
 }
 
-// Copyright (c) DreamWorks Animation LLC
+// Copyright (c) 2012-2018 DreamWorks Animation LLC
 // All rights reserved. This software is distributed under the
 // Mozilla Public License 2.0 ( http://www.mozilla.org/MPL/2.0/ )

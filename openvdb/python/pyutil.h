@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////
 //
-// Copyright (c) DreamWorks Animation LLC
+// Copyright (c) 2012-2019 DreamWorks Animation LLC
 //
 // All rights reserved. This software is distributed under the
 // Mozilla Public License 2.0 ( http://www.mozilla.org/MPL/2.0/ )
@@ -108,14 +108,14 @@ struct GridTraits: public GridTraitsBase<GridType>
 GRID_TRAITS(openvdb::FloatGrid, "FloatGrid");
 GRID_TRAITS(openvdb::Vec3SGrid, "Vec3SGrid");
 GRID_TRAITS(openvdb::BoolGrid, "BoolGrid");
-#ifdef PY_OPENVDB_WRAP_ALL_GRID_TYPES
+//#ifdef PY_OPENVDB_WRAP_ALL_GRID_TYPES
 GRID_TRAITS(openvdb::DoubleGrid, "DoubleGrid");
 GRID_TRAITS(openvdb::Int32Grid, "Int32Grid");
 GRID_TRAITS(openvdb::Int64Grid, "Int64Grid");
 GRID_TRAITS(openvdb::Vec3IGrid, "Vec3IGrid");
 GRID_TRAITS(openvdb::Vec3DGrid, "Vec3DGrid");
 GRID_TRAITS(openvdb::points::PointDataGrid, "PointDataGrid");
-#endif
+//#endif
 
 #undef GRID_TRAITS
 
@@ -281,6 +281,6 @@ className(boost::python::object obj)
 
 #endif // OPENVDB_PYUTIL_HAS_BEEN_INCLUDED
 
-// Copyright (c) DreamWorks Animation LLC
+// Copyright (c) 2012-2019 DreamWorks Animation LLC
 // All rights reserved. This software is distributed under the
 // Mozilla Public License 2.0 ( http://www.mozilla.org/MPL/2.0/ )

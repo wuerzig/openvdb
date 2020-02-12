@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////
 //
-// Copyright (c) DreamWorks Animation LLC
+// Copyright (c) 2012-2018 DreamWorks Animation LLC
 //
 // All rights reserved. This software is distributed under the
 // Mozilla Public License 2.0 ( http://www.mozilla.org/MPL/2.0/ )
@@ -52,9 +52,9 @@ exportFloatGrid()
 #endif
 
     pyGrid::exportGrid<FloatGrid>();
-#ifdef PY_OPENVDB_WRAP_ALL_GRID_TYPES
+//#ifdef PY_OPENVDB_WRAP_ALL_GRID_TYPES
     pyGrid::exportGrid<DoubleGrid>();
-#endif
+//#endif
 
     py::def("createLevelSetSphere",
         &pyGrid::createLevelSetSphere<FloatGrid>,
@@ -65,6 +65,6 @@ exportFloatGrid()
         "of a sphere.");
 }
 
-// Copyright (c) DreamWorks Animation LLC
+// Copyright (c) 2012-2018 DreamWorks Animation LLC
 // All rights reserved. This software is distributed under the
 // Mozilla Public License 2.0 ( http://www.mozilla.org/MPL/2.0/ )

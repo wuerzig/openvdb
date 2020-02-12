@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////
 //
-// Copyright (c) DreamWorks Animation LLC
+// Copyright (c) 2012-2018 DreamWorks Animation LLC
 //
 // All rights reserved. This software is distributed under the
 // Mozilla Public License 2.0 ( http://www.mozilla.org/MPL/2.0/ )
@@ -84,6 +84,9 @@
 #ifndef PYOPENVDB_HAS_BEEN_INCLUDED
 #define PYOPENVDB_HAS_BEEN_INCLUDED
 
+#define PY_OPENVDB_WRAP_ALL_GRID_TYPES 1
+
+
 #include <boost/python.hpp>
 #include "openvdb/Grid.h"
 
@@ -108,6 +111,6 @@ boost::python::object getPyObjectFromGrid(const openvdb::GridBase::Ptr&);
 
 #endif // PYOPENVDB_HAS_BEEN_INCLUDED
 
-// Copyright (c) DreamWorks Animation LLC
+// Copyright (c) 2012-2018 DreamWorks Animation LLC
 // All rights reserved. This software is distributed under the
 // Mozilla Public License 2.0 ( http://www.mozilla.org/MPL/2.0/ )

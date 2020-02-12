@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////
 //
-// Copyright (c) DreamWorks Animation LLC
+// Copyright (c) 2012-2019 DreamWorks Animation LLC
 //
 // All rights reserved. This software is distributed under the
 // Mozilla Public License 2.0 ( http://www.mozilla.org/MPL/2.0/ )
@@ -40,6 +40,7 @@
 #include <boost/version.hpp>
 #define DWA_BOOST_VERSION (10 * BOOST_VERSION)
 #endif
+#define PY_OPENVDB_USE_NUMPY 1
 #ifdef PY_OPENVDB_USE_NUMPY
   #if DWA_BOOST_VERSION >= 1065000
     // boost::python::numeric was replaced with boost::python::numpy in Boost 1.65.
@@ -109,14 +110,19 @@ getPyObjectFromGrid(const GridBase::Ptr& grid)
     CONVERT_BASE_TO_GRID(FloatGrid, grid);
     CONVERT_BASE_TO_GRID(Vec3SGrid, grid);
     CONVERT_BASE_TO_GRID(BoolGrid, grid);
-#ifdef PY_OPENVDB_WRAP_ALL_GRID_TYPES
+/*#ifdef PY_OPENVDB_WRAP_ALL_GRID_TYPES
+    #error WRAPPING
+#else
+    #error NOT WRAPPING
+#endif*/
+//#ifdef PY_OPENVDB_WRAP_ALL_GRID_TYPES
     CONVERT_BASE_TO_GRID(DoubleGrid, grid);
     CONVERT_BASE_TO_GRID(Int32Grid, grid);
     CONVERT_BASE_TO_GRID(Int64Grid, grid);
     CONVERT_BASE_TO_GRID(Vec3IGrid, grid);
     CONVERT_BASE_TO_GRID(Vec3DGrid, grid);
     CONVERT_BASE_TO_GRID(points::PointDataGrid, grid);
-#endif
+//#endif
 #undef CONVERT_BASE_TO_GRID
 
     OPENVDB_THROW(TypeError, grid->type() + " is not a supported OpenVDB grid type");
@@ -139,14 +145,14 @@ getGridFromPyObject(const boost::python::object& gridObj)
     CONVERT_GRID_TO_BASE(FloatGrid::Ptr);
     CONVERT_GRID_TO_BASE(Vec3SGrid::Ptr);
     CONVERT_GRID_TO_BASE(BoolGrid::Ptr);
-#ifdef PY_OPENVDB_WRAP_ALL_GRID_TYPES
+//#ifdef PY_OPENVDB_WRAP_ALL_GRID_TYPES
     CONVERT_GRID_TO_BASE(DoubleGrid::Ptr);
     CONVERT_GRID_TO_BASE(Int32Grid::Ptr);
     CONVERT_GRID_TO_BASE(Int64Grid::Ptr);
     CONVERT_GRID_TO_BASE(Vec3IGrid::Ptr);
     CONVERT_GRID_TO_BASE(Vec3DGrid::Ptr);
     CONVERT_GRID_TO_BASE(points::PointDataGrid::Ptr);
-#endif
+//#endif
 #undef CONVERT_GRID_TO_BASE
 
     OPENVDB_THROW(TypeError,
@@ -2589,6 +2595,6 @@ exportGrid()
 
 #endif // OPENVDB_PYGRID_HAS_BEEN_INCLUDED
 
-// Copyright (c) DreamWorks Animation LLC
+// Copyright (c) 2012-2019 DreamWorks Animation LLC
 // All rights reserved. This software is distributed under the
 // Mozilla Public License 2.0 ( http://www.mozilla.org/MPL/2.0/ )
